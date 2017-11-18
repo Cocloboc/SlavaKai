@@ -217,7 +217,7 @@ namespace Calcul.Dialogs
                     }
                     break;
                 case 16:
-                    if (!numbers.Text.All(c => "0123456789ABCDEF".Contains(c)))
+                    if (!numbers.Text.All(c => "0123456789ABCDEFabcdef".Contains(c)))
                     {
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
@@ -345,7 +345,7 @@ namespace Calcul.Dialogs
                     }
                     break;
                 case 16:
-                    if (!numbers.Text.All(c => "0123456789ABCDEF".Contains(c)))
+                    if (!numbers.Text.All(c => "0123456789ABCDEFabcdef".Contains(c)))
                     {
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
@@ -454,7 +454,7 @@ namespace Calcul.Dialogs
                     }
                     break;
                 case 16:
-                    if (!numbers.Text.All(c => "0123456789ABCDEF".Contains(c)))
+                    if (!numbers.Text.All(c => "0123456789ABCDEFabcdef".Contains(c)))
                     {
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
