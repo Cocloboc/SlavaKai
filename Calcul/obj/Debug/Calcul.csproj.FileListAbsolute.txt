@@ -42,3 +42,47 @@ c:\users\kirbe\source\repos\Calcul\Calcul\bin\ru\Microsoft.Bot.Builder.resources
 c:\users\kirbe\source\repos\Calcul\Calcul\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
 c:\users\kirbe\source\repos\Calcul\Calcul\obj\Debug\Bot Application.dll
 c:\users\kirbe\source\repos\Calcul\Calcul\obj\Debug\Bot Application.pdb
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\obj\Debug\Calcul.csprojResolveAssemblyReference.cache
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\obj\Debug\Calcul.csproj.CoreCompileInputs.cache
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\obj\Debug\Bot Application.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\obj\Debug\Bot Application.pdb
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Bot Application.dll.config
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Bot Application.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Bot Application.pdb
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Autofac.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Chronic.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Builder.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Connector.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Newtonsoft.Json.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Net.Http.Formatting.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Web.Http.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Web.Http.WebHost.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Autofac.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Builder.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.Bot.Connector.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\Newtonsoft.Json.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Net.Http.Formatting.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Web.Http.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\System.Web.Http.WebHost.xml
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\kirbe\Dropbox\SlavaKai\Calcul\bin\zh-hans\Microsoft.Bot.Builder.resources.dll

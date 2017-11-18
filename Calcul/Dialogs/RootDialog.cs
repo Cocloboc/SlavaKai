@@ -10,9 +10,13 @@ namespace Calcul.Dialogs
     [Serializable]
     public class RootDialog : IDialog<object>
     {
+
         protected int Sys_Number { get; set; }
         protected int First_Number { get; set; }
+        protected double First_Number_in { get; set; }
         protected int Second_Number { get; set; }
+        protected double Second_Number_in { get; set; }
+        protected double tutu { get; set; }
 
 
         public async Task StartAsync(IDialogContext context)
@@ -23,8 +27,7 @@ namespace Calcul.Dialogs
         public async Task MessageReceivedStart(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
             await context.PostAsync("Что хочешь? Калькулятор? Или, быть может, конвертер?");
-            //await context.PostAsync("Hello ! WelCome to Gohul Solutions ", "Please Enter You Name ");
-            //context.Wait();
+
 
 
 
@@ -48,7 +51,7 @@ namespace Calcul.Dialogs
             else
             {
                 await context.PostAsync("Так, понятно. Сложновато для тебя. Ничего, привыкай. Давай сначала.");
-                context.Wait(MessageReceivedStart);
+                await MessageReceivedStart(context, argument);
             }
         }
 
@@ -94,6 +97,11 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
                 case 8:
                     if (!numbers.Text.All(c => "01234567".Contains(c)))
@@ -102,13 +110,22 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
                 case 10:
-                    if (!numbers.Text.All(c => "0123456789".Contains(c)))
+                    if (!numbers.Text.All(c => "0123456789,".Contains(c)))
                     {
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
                         return;
+                    }
+                    else
+                    {
+                        First_Number_in = Convert.ToDouble(numbers.Text);
                     }
                     break;
                 case 16:
@@ -118,9 +135,13 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
             }
-            First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
             await context.PostAsync("В какую систему переводим?(2, 8, 10 или 16)");
             context.Wait(conv);
         }
@@ -133,6 +154,11 @@ namespace Calcul.Dialogs
                 await context.PostAsync("4 варианта и ты ошибся? Страдай.");
                 await MessageReceivedStart(context, argument);
                 return;
+            }
+            if (Sys_Number == 10)
+            {
+                await context.PostAsync(First_Number_in.ToString());
+                await MessageReceivedStart(context, argument);
             }
             String result = Convert.ToString(First_Number, Sys_Number);
             await context.PostAsync(result);
@@ -165,6 +191,11 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
                 case 8:
                     if (!numbers.Text.All(c => "01234567".Contains(c)))
@@ -173,13 +204,22 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
                 case 10:
-                    if (!numbers.Text.All(c => "0123456789".Contains(c)))
+                    if (!numbers.Text.All(c => "0123456789,".Contains(c)))
                     {
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
                         return;
+                    }
+                    else
+                    {
+                        First_Number_in = Convert.ToDouble(numbers.Text);
                     }
                     break;
                 case 16:
@@ -189,9 +229,13 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        First_Number_in = Convert.ToDouble(First_Number);
+                    }
                     break;
             }
-            First_Number = Convert.ToInt32(numbers.Text, Sys_Number);
             await context.PostAsync("Что с системой второго числа?(2, 8, 10 или 16)");
             context.Wait(calc_Sys2);
         }
@@ -222,6 +266,11 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        Second_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        Second_Number_in = Convert.ToDouble(Second_Number);
+                    }
                     break;
                 case 8:
                     if (!numbers.Text.All(c => "01234567".Contains(c)))
@@ -229,6 +278,11 @@ namespace Calcul.Dialogs
                         await context.PostAsync("Нет, совсем нет. Давай заново.");
                         await MessageReceivedStart(context, argument);
                         return;
+                    }
+                    else
+                    {
+                        Second_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        Second_Number_in = Convert.ToDouble(Second_Number);
                     }
                     break;
                 case 10:
@@ -238,6 +292,10 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        Second_Number_in = Convert.ToDouble(numbers.Text);
+                    }
                     break;
                 case 16:
                     if (!numbers.Text.All(c => "0123456789ABCDEF".Contains(c)))
@@ -246,9 +304,13 @@ namespace Calcul.Dialogs
                         await MessageReceivedStart(context, argument);
                         return;
                     }
+                    else
+                    {
+                        Second_Number = Convert.ToInt32(numbers.Text, Sys_Number);
+                        Second_Number_in = Convert.ToDouble(Second_Number);
+                    }
                     break;
             }
-            Second_Number = Convert.ToInt32(numbers.Text, Sys_Number);
             await context.PostAsync("И что с ними делать?(+, -, / или *)");
             context.Wait(Function);
         }
@@ -265,16 +327,16 @@ namespace Calcul.Dialogs
             switch (numbers.Text)
             {
                 case "+":
-                    Second_Number = First_Number + Second_Number;
+                    tutu = First_Number_in + Second_Number_in;
                     break;
                 case "-":
-                    Second_Number = First_Number - Second_Number;
+                    tutu = First_Number_in - Second_Number_in;
                     break;
                 case "*":
-                    Second_Number = First_Number * Second_Number;
+                    tutu = First_Number_in * Second_Number_in;
                     break;
                 case "/":
-                    Second_Number = First_Number / Second_Number;
+                    tutu = First_Number_in / Second_Number_in;
                     break;
             }
             await context.PostAsync("В какой системе хочешь ответ?(2, 8, 10, 16)");
@@ -291,13 +353,13 @@ namespace Calcul.Dialogs
                 return;
 
             }
-            if (Sys_Number == 10) await context.PostAsync(Second_Number.ToString());
+            if (Sys_Number == 10) await context.PostAsync(tutu.ToString());
             else
             {
-                if (Second_Number < 0)
+                if (Second_Number_in < 0)
                     await context.PostAsync("Ты не хочешь этого видеть");
                 else
-                    await context.PostAsync(Convert.ToString(Second_Number, Sys_Number));
+                    await context.PostAsync(Convert.ToString(Convert.ToInt32(tutu), Sys_Number));
             }
             await MessageReceivedStart(context, argument);
         }
