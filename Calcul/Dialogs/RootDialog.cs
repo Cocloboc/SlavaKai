@@ -4,6 +4,8 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System.Text.RegularExpressions;
 using System.Linq;
+using System.Collections.Generic;
+using AdaptiveCards;
 
 namespace Calcul.Dialogs
 {
@@ -26,11 +28,29 @@ namespace Calcul.Dialogs
         }
         public async Task MessageReceivedStart(IDialogContext context, IAwaitable<IMessageActivity> argument)
         {
-            await context.PostAsync("Что хочешь? Калькулятор? Или, быть может, конвертер?");
-
-
-
-
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var heroCard = new HeroCard
+            {
+                Title = $"Что хочешь?",
+                Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"калькулятор",
+                            Type = "postBack",
+                            Title = "Калькулятор"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"конвертер",
+                            Type = "postBack",
+                            Title = "Конвертер"
+                        }
+                     }
+            };
+            reply.Attachments.Add(heroCard.ToAttachment());
+            await context.PostAsync(reply);
             context.Wait(MessageReceivedOperationChoice);
         }
 
@@ -40,12 +60,80 @@ namespace Calcul.Dialogs
 
             if (message.Text.ToLower().Equals("конвертер", StringComparison.InvariantCultureIgnoreCase))
             {
-                await context.PostAsync("Что с основанием системы счисления?(2, 8, 10 или 16)");
+                var reply = context.MakeMessage();
+                reply.Attachments = new List<Attachment>();
+                var heroCard = new HeroCard
+                {
+                    Title = $"Что с основанием системы счисления?",
+                    Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"2",
+                            Type = "postBack",
+                            Title = "Двоичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"8",
+                            Type = "postBack",
+                            Title = "Восьмеричная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"10",
+                            Type = "postBack",
+                            Title = "Десятичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"16",
+                            Type = "postBack",
+                            Title = "Шестнадцатиричная"
+                        }
+                     }
+                };
+                reply.Attachments.Add(heroCard.ToAttachment());
+                await context.PostAsync(reply);
                 context.Wait(conv_Sys);
             }
             else if (message.Text.ToLower().Equals("калькулятор", StringComparison.InvariantCultureIgnoreCase))
             {
-                await context.PostAsync("Что с основанием системы счисления первого числа?(2, 8, 10, 16)");
+                var reply = context.MakeMessage();
+                reply.Attachments = new List<Attachment>();
+                var heroCard = new HeroCard
+                {
+                    Title = $"Что с основанием системы счисления?",
+                    Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"2",
+                            Type = "postBack",
+                            Title = "Двоичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"8",
+                            Type = "postBack",
+                            Title = "Восьмеричная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"10",
+                            Type = "postBack",
+                            Title = "Десятичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"16",
+                            Type = "postBack",
+                            Title = "Шестнадцатиричная"
+                        }
+                     }
+                };
+                reply.Attachments.Add(heroCard.ToAttachment());
+                await context.PostAsync(reply);
                 context.Wait(calc_Sys1);
             }
             else
@@ -142,7 +230,41 @@ namespace Calcul.Dialogs
                     }
                     break;
             }
-            await context.PostAsync("В какую систему переводим?(2, 8, 10 или 16)");
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var heroCard = new HeroCard
+            {
+                Title = $"В какую систему переводим?",
+                Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"2",
+                            Type = "postBack",
+                            Title = "Двоичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"8",
+                            Type = "postBack",
+                            Title = "Восьмеричная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"10",
+                            Type = "postBack",
+                            Title = "Десятичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"16",
+                            Type = "postBack",
+                            Title = "Шестнадцатиричная"
+                        }
+                     }
+            };
+            reply.Attachments.Add(heroCard.ToAttachment());
+            await context.PostAsync(reply);
             context.Wait(conv);
         }
         public async Task conv(IDialogContext context, IAwaitable<IMessageActivity> argument)
@@ -236,7 +358,41 @@ namespace Calcul.Dialogs
                     }
                     break;
             }
-            await context.PostAsync("Что с системой второго числа?(2, 8, 10 или 16)");
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var heroCard = new HeroCard
+            {
+                Title = $"Что с основанием второго числа?",
+                Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"2",
+                            Type = "postBack",
+                            Title = "Двоичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"8",
+                            Type = "postBack",
+                            Title = "Восьмеричная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"10",
+                            Type = "postBack",
+                            Title = "Десятичная"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"16",
+                            Type = "postBack",
+                            Title = "Шестнадцатиричная"
+                        }
+                     }
+            };
+            reply.Attachments.Add(heroCard.ToAttachment());
+            await context.PostAsync(reply);
             context.Wait(calc_Sys2);
         }
 
@@ -311,7 +467,41 @@ namespace Calcul.Dialogs
                     }
                     break;
             }
-            await context.PostAsync("И что с ними делать?(+, -, / или *)");
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var heroCard = new HeroCard
+            {
+                Title = $"Что с ними делать?",
+                Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"+",
+                            Type = "postBack",
+                            Title = "Сложи"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"-",
+                            Type = "postBack",
+                            Title = "Вычти"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"*",
+                            Type = "postBack",
+                            Title = "Умножь"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"/",
+                            Type = "postBack",
+                            Title = "Дели"
+                        }
+                     }
+            };
+            reply.Attachments.Add(heroCard.ToAttachment());
+            await context.PostAsync(reply);
             context.Wait(Function);
         }
         public async Task Function(IDialogContext context, IAwaitable<IMessageActivity> argument)
@@ -339,7 +529,41 @@ namespace Calcul.Dialogs
                     tutu = First_Number_in / Second_Number_in;
                     break;
             }
-            await context.PostAsync("В какой системе хочешь ответ?(2, 8, 10, 16)");
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var heroCard = new HeroCard
+            {
+                Title = $"В какой системе хочешь ответ?",
+                Buttons = new List<CardAction>()
+                    {
+                        new CardAction()
+                        {
+                            Value = $"2",
+                            Type = "postBack",
+                            Title = "В двоичной"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"8",
+                            Type = "postBack",
+                            Title = "В восьмеричной"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"10",
+                            Type = "postBack",
+                            Title = "В десятичной"
+                        },
+                        new CardAction()
+                        {
+                            Value = $"16",
+                            Type = "postBack",
+                            Title = "В шестнадцатиричной"
+                        }
+                     }
+            };
+            reply.Attachments.Add(heroCard.ToAttachment());
+            await context.PostAsync(reply);
             context.Wait(Result);
         }
         public async Task Result(IDialogContext context, IAwaitable<IMessageActivity> argument)
